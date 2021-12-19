@@ -55,7 +55,7 @@ onClick={()=>this.edit}
 ```javascript
 `创建state有两种方式`
 1：class Meum extends React.Component{
-    contructor(){
+    constructor(){
         this.state = {
             user:{}
         }
@@ -111,7 +111,7 @@ function Box(props){
 
 ```jsx
 class Box extends React.Component{
-    construtor(props){
+    constructor(props){
         super(props)
         // 在此就可以 直接使用props了
     }
@@ -132,7 +132,7 @@ class Box extends React.Component{
 ```js
 `父组件`
 class Father extends React.Compenten{
-    consrutor(){
+    constructor(){
         super()
         this.state = {
             name:'我是父组件'
@@ -175,7 +175,7 @@ class Father extends React.Component{
 
 `子组件接收父组件回调函数并传值/参`
 class Son extends React.Component{
-    contrustor(props){
+    constructor(props){
        super(props)
         this.state ={
             name:'钱宗泽'
@@ -211,7 +211,7 @@ class Son extends React.Component{
 ```jsx
 const {Provider,Consumer} = React.creatContext()
 class App extends React.Component{
-    construtor(props){
+    constructor(props){
         super(props)
         this.state = {
             name:'跨级传递数据'
@@ -324,7 +324,26 @@ function One(props){
 
 > #### 12：组件的生命周期
 
-​	`注意：`只有类组件才有生命周期
+1. `注意：`只有类组件才有生命周期！
+2. 组件具有三种状态生命周期：
+3. 1. 创建时
+   2. 更新时
+   3. 卸载时
 
+- 创建时：顺序分为 1：construtor() ===> 2：render ===> 3：componentDidMount
 
+- |     生命周期      | 触发时机                | 作用                                    |
+  | :---------------: | ----------------------- | --------------------------------------- |
+  |    constructor    | 创建组件最先执行        | 初始化state，为事件处理程序绑定this指向 |
+  |      render       | 每次组件渲染都会被触发  | 渲染页面 `注意:不能调用setState()`      |
+  | componentDidMount | 组件挂载，完成DOM渲染后 | 发送网络请求，DOM操作                   |
 
+  更新时：使用setState({})、forceUpdate()、接收到新props时 会执行 render ===> componentUpdate()
+
+  参数：componentUpdate(`prevProps`)代表上一次的props数据
+  
+  ​	`注意:如果在componentUpdate(prevProps)中使用setState()必须放在一个if条件中判断,否则会造      				成递归更新`
+  
+  卸载时：componentWillUnmount()
+  
+  
