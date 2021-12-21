@@ -345,3 +345,18 @@ function One(props){
   卸载时：componentWillUnmount()
   
   
+
+> #### 13：深入JSX
+
+##### React中的表达式 `以下写法都不会被渲染！！`
+
+![1640084962234](C:\Users\22758\AppData\Roaming\Typora\typora-user-images\1640084962234.png)
+
+##### 可以使用运算符进行判断组件渲染
+
+```jsx
+<div>
+{cass&&<Hello/>}
+</div>
+```
+
