@@ -152,9 +152,7 @@ function Son(props){
 }
 ```
 
-
-
-2 子父通讯
+###### 2 子父通讯
 
 ```jsx
 `父组件提供一个回调函数`
@@ -240,7 +238,7 @@ function One(props){
 
 > #### 11：props的深入
 
-1. props的`children`属性
+1. ###### props的`children`属性
 
    ```jsx
    
@@ -264,7 +262,7 @@ function One(props){
                    <div>
                        <Three>
                       		子节点内容--     
-                           <input type='search' value='我是强行添加的子节点!!' readOnly/>
+                      	<input type='search' value='我是强行添加的子节点!!' readOnly/>
                        </Three>
                    </div>
            );
